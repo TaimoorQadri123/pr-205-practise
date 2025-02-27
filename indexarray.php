@@ -24,31 +24,25 @@
         <?php 
         $students = ["Ali","Aqsa","Hamza","Sana"];
         print_r($students);
-
         ?>
         
-        <ul>
+         <ul>
             <?php
-            for($i=0 : $i<count($students) : $i++ ){
+            for($i=0 ; $i<count($students) ; $i++ ){
                 ?>
-             <li> <?php echo $students[$i] ?> </li>
+             <li> <?php echo $students[$i]?> </li>
 
-            
             <?php
             }
             ?>
         </ul>
 
         <h1>foreach loop</h1>
-
-
         <ul>
             <?php
-            foreach($students as $std){
+            foreach($students as $key => $std){
                 ?>
-             <li> <?php echo $std ?> </li>
-
-            
+             <li> <?php echo $key." ". $std ?> </li>            
             <?php
             }
             ?>
