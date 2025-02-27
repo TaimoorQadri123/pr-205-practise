@@ -20,7 +20,7 @@
 
     <body>
        <?php   
-       $allstudents[
+       $allstudents=[
         ["ali",21,"karachi","ali@gmail.com"],
         ["aqsa",19,"karachi","aqsa@gmail.com"],
         ["hassan",21,"karachi","hassan@gmail.com"]
@@ -43,7 +43,7 @@
             </thead>
             <tbody>
                 <?php 
-                foreach($allstudents as key => $student){
+                foreach($allstudents as $key => $student){
 
                     ?>
                  <tr>
