@@ -19,52 +19,55 @@
     </head>
 
     <body>
-       <?php   
-       $students=[
-        ["ali",21,"karachi","ali@gmail.com"],
-        ["aqsa",19,"karachi","aqsa@gmail.com"],
-        ["hassan",21,"karachi","hassan@gmail.com"]
-       ];
+    <div class="container">
+
+<?php 
+$allstudents=[
+ ["Ali",15,"karachi","ali@gmail.com"],
+ ["Taimoor",19,"karachi","taimoor@gmail.com"],
+ ["Asad",22,"karachi","asad@gmail.com"]
+];
+?>
+<div
+ class="table-responsive"
+>
+ <table
+     class="table table-primary"
+ >
+     <thead>
+         <tr>
+             <th scope="col">Name</th>
+             <th scope="col">Age</th>
+             <th scope="col">City</th>
+             <th scope="col">E-mail</th>
+
+         </tr>
+     </thead>
+     <tbody>
+          
+       <?php
+       for($i=0; $i<count($allstudents); $i++){
+         ?>
+
+          <tr>
+             <td><?php echo $allstudents[$i][0] ?></td>
+             <td><?php echo $allstudents[$i][1] ?></td>
+             <td><?php echo $allstudents[$i][2] ?></td>
+             <td><?php echo $allstudents[$i][3] ?></td>
+             
+         </tr>
+
+         <?php
+       }
        ?>
-       <div
-        class="table-responsive"
-       >
-        <table
-            class="table table-primary"
-        >
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Age</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Email</th>
+          
 
-                </tr>
-            </thead>
-            <tbody>
-                <?php 
-                for($i=0 ; $i<count($students) ; $i++){
+        
+         
+     </tbody>
+ </table>
+</div>
 
-                    ?>
-                 <tr>
-                    <td><?php echo $i[0]?></td>
-                    <td><?php echo $i[1]?></td>
-                    <td><?php echo $i[2]?></td>
-                    <td><?php echo $i[3]?></td>
-                    
-                 </tr>
-                    <?php
-                }
-                ?>
-              
-                <!-- <tr class="">
-                    <td scope="row">Item</td>
-                    <td>Item</td>
-                    <td>Item</td>
-                </tr> -->
-            </tbody>
-        </table>
-       </div>
-       
+</div>  
     </body>
 </html>
