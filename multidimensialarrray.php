@@ -21,9 +21,9 @@
     <body>
        <?php   
        $allstudents=[
-        ["ali",21,"karachi","ali@gmail.com"],
+        ["ali",21,"karachi","ali@gmail.com",123],
         ["aqsa",19,"karachi","aqsa@gmail.com"],
-        ["hassan",21,"karachi","hassan@gmail.com"]
+        ["hassan",21,"karachi","hassan@gmail.com",4556]
        ];
        ?>
        <div
@@ -38,6 +38,8 @@
                     <th scope="col">Age</th>
                     <th scope="col">City</th>
                     <th scope="col">Email</th>
+                    <th scope="col">Password</th>
+
 
                 </tr>
             </thead>
@@ -47,10 +49,15 @@
 
                     ?>
                  <tr>
-                    <td><?php echo $student[0]?></td>
-                    <td><?php echo $student[1]?></td>
-                    <td><?php echo $student[2]?></td>
-                    <td><?php echo $student[3]?></td>
+
+                   <?php 
+                   foreach($student as $data){
+                   ?>
+                   <td><?php echo $data?></td>
+                   <?php
+                   }
+                   ?>
+                   
                     
                  </tr>
                     <?php
