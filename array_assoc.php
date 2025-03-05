@@ -23,10 +23,12 @@ echo $student['name'] . " ". $student['email'];
 $students = [
     
     ["id"=>1,"name"=>"ali","email"=>"ali@gmail.com"],
-    ["id"=>1,"name"=>"hassan","email"=>"hassan@gmail.com"],
-    ["id"=>1,"name"=>"aqsa","email"=>"aqsa@gmail.com"]
+    ["id"=>2,"name"=>"hassan","email"=>"hassan@gmail.com"],
+    ["id"=>3,"name"=>"aqsa","email"=>"aqsa@gmail.com"]
 
 ];
+
+
 $allstudents = [
     "std1527"=>["name"=>"ali","email"=>"ali@gmail.com"],
     "std1527"=>["name"=>"hassan","email"=>"hassan@gmail.com"],
@@ -34,3 +36,98 @@ $allstudents = [
 
 ];
 ?>
+
+    <div
+        class="table-responsive"
+       >
+        <table
+            class="table table-primary"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <!-- <th scope="col"></th> -->
+                    <!-- <th scope="col"></th> -->
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                foreach($students  as $key => $student){
+
+                    ?>
+                 <tr>
+
+                   <?php 
+                   foreach($student as $data){
+                   ?>
+                   <td><?php echo $data?></td>
+                   <?php
+                   }
+                   ?>
+                   
+                    
+                 </tr>
+                    <?php
+                }
+                ?>
+              
+                <!-- <tr class="">
+                    <td scope="row">Item</td>
+                    <td>Item</td>
+                    <td>Item</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>
+
+
+    <div
+        class="table-responsive"
+       >
+        <table
+            class="table table-primary"
+        >
+            <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <!-- <th scope="col"></th> -->
+                    <!-- <th scope="col"></th> -->
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <?php 
+                foreach($allstudents  as $key => $std){
+
+                    ?>
+                 <tr>
+
+                   <?php 
+                   foreach($std as $data){
+                   ?>
+                   <td><?php echo $data?></td>
+                   <?php
+                   }
+                   ?>
+                   
+                    
+                 </tr>
+                    <?php
+                }
+                ?>
+              
+                <!-- <tr class="">
+                    <td scope="row">Item</td>
+                    <td>Item</td>
+                    <td>Item</td>
+                </tr> -->
+            </tbody>
+        </table>
+    </div>

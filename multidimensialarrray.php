@@ -26,7 +26,7 @@
         ["hassan",21,"karachi","hassan@gmail.com",4556]
        ];
        ?>
-       <div
+    <div
         class="table-responsive"
        >
         <table
@@ -71,7 +71,7 @@
                 </tr> -->
             </tbody>
         </table>
-       </div>
+    </div>
        
     </body>
 </html>
