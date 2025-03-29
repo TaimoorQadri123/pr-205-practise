@@ -1,7 +1,11 @@
 <?php 
 include("php/query.php");
 include("components/header.php");
+if(!isset($_SESSION['adminEmail'])){
+    echo "<script>location.assign('../login.php')</script>";
+}
 ?>
+
 
 
             <!-- Sale & Revenue Start -->
