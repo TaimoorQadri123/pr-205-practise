@@ -1,11 +1,11 @@
-<?php
+<?php 
 include("php/query.php");
 include("components/header.php");
 if(!isset($_SESSION['adminEmail'])){
-echo "<script>location.assign('../login.php')</script>";
+    echo "<script>location.assign('../login.php')</script>";
 }
-
 ?>
+
 
 
             <!-- Sale & Revenue Start -->
@@ -51,8 +51,6 @@ echo "<script>location.assign('../login.php')</script>";
             </div>
             <!-- Sale & Revenue End -->
 
-
-            <div class="container">
             <?php 
 if(isset($_SESSION['adminEmail'])){
 ?>
@@ -62,8 +60,6 @@ if(isset($_SESSION['adminEmail'])){
 <?php 
 }
 ?>
-            </div>
-
             <!-- Sales Chart Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -88,6 +84,10 @@ if(isset($_SESSION['adminEmail'])){
                 </div>
             </div>
             <!-- Sales Chart End -->
+
+
+
+
 
 
             <!-- Recent Sales Start -->
@@ -285,6 +285,7 @@ if(isset($_SESSION['adminEmail'])){
             </div>
             <!-- Widgets End -->
 
-<?php
-include("components/footer.php")
+<?php 
+
+include("components/footer.php");
 ?>
