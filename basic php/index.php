@@ -1,29 +1,31 @@
-<?php 
-$stdName = "Taimoor Ali";
-$stdage = 18;
-$nic = true;
-echo $stdName . " ". $stdage ;
-echo "<h1>" .$stdName. "</h1>";
-
-
-?>
-<h1> <?php echo $stdName ?></h1>
 <?php
-$color = "red";
-$empName = "hassan";
+$stdName ="Taimoor";
+$stdAge = 20;   
+$stdGrade = "A";    
+$stdNic = "1234567890"; 
+
+echo $stdName ." ". $stdAge ." ". $stdGrade ." ". $stdNic;    
+
+            //Two way of using H1 in php
+
+// echo "<h1>".$stdName."</h1>"
 ?>
-<h1 style="color:<?php echo $color ?>"><?php echo $empName ?> </h1>
-<?php
-$num1 = 20 ;
-$num2 = 84 ;
-$mul =  $num1*$num2;
-$add= $num1+$num2;
-$sub = $num1-$num2;
-$div = $num1/$num2;
-// echo "addition result is". $add . ;
-// echo "mutiplication result is". $mul .; 
-echo "addition result is"." ". $add . "<br>";
-echo "subraction result is"." ". $sub . "<br>";
-echo "multiplication result is"." ". $mul . "<br>";
-echo "division result is"." ". $div . "<br>";
-?>
+
+<h1><?php echo $stdName?></h1>
+<h1><?php
+
+$num1 = 10;
+$num2 = 20;
+$num3 = 30;
+
+$add = $num1 + $num2 + $num3;
+$mul = $num1 * $num2 * $num3;
+$sub = $num1 - $num2 - $num3;
+$div = $num1 / $num2 / $num3;
+
+echo "Addition result is = " . $add . "<br>";
+echo "Multiplication result is = " . $mul . "<br>";
+echo "Subtraction result is = " . $sub . "<br>";
+echo "Division result is = " . $div . "<br>";
+?></h1>
+

@@ -2,7 +2,6 @@
 include("dbcon.php");
 session_start();
 
-
 $userName = $userEmail = $userPassword = $userConfirmPassword = "" ;
 $userNameErr= $userEmailErr = $userPasswordErr = $userConfirmPasswordErr = "" ;
 if(isset($_POST['registerUser'])){
@@ -102,6 +101,11 @@ if(isset($_POST['registerUser'])){
 //     }
 // }
 
+
+
+
+// login.php 
+
 if(isset($_POST['login'])){
     $userEmail = $_POST['uEmail'];
     $userPassword = $_POST['uPassword'];
@@ -144,6 +148,5 @@ if(isset($_POST['login'])){
         $userPasswordErr = "password is required";
     }
 }
-
 
 ?>

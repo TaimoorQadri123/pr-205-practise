@@ -51,32 +51,40 @@
 
   </body>
 </html>
-
 <?php
-if(isset($_POST["sub"])) {
-    $username = $_POST["name"];
-    $userage = $_POST["age"];
-    $usersalary = $_POST["salary"];
-    $loan_amount = $_POST["loan_amount"];
-    $duration = $_POST["duration"];
+// if(isset($_post["sub"])){
+//     $username = $_POST["name"];
+//     $userage = $_POST["age"];
+//     $usersalary = $_POST["salary"];
+//     echo " ". $username . $userage ;
     
-    // Check if salary is less than 50000
-    if($usersalary < 50000) {
-        echo "You are not eligible for the loan. Your salary must be greater than 50,000.";
-    } else {
-        echo "Name: " . $username . "<br>";
-        echo "Age: " . $userage . "<br>";
-        echo "Salary: " . $usersalary . "<br>";
-        
-        if($loan_amount && $duration) {
-            // Calculate monthly installment
-            $monthly_installment = $loan_amount / ($duration * 12); // monthly installment for the given duration
-            echo "Loan Amount: " . $loan_amount . "<br>";
-            echo "Installment Duration: " . $duration . " years<br>";
-            echo "Your monthly installment: " . number_format($monthly_installment, 2) . " per month";
-        } else {
-            echo "Please select loan amount and duration.";
-        }
-    }
+
+
+// }
+if(isset($_POST["sub"])) {
+  $username = $_POST["name"];
+  $userage = $_POST["age"];
+  $usersalary = $_POST["salary"];
+  $loan_amount = $_POST["loan_amount"];
+  $duration = $_POST["duration"];
+  
+  // Check if salary is less than 50000
+  if($usersalary < 50000) {
+      echo "You are not eligible for the loan. Your salary must be greater than 50,000.";
+  } else {
+      echo "Name: " . $username . "<br>";
+      echo "Age: " . $userage . "<br>";
+      echo "Salary: " . $usersalary . "<br>";
+      
+      if($loan_amount && $duration) {
+          // Calculate monthly installment
+          $monthly_installment = $loan_amount / ($duration * 12); // monthly installment for the given duration
+          echo "Loan Amount: " . $loan_amount . "<br>";
+          echo "Installment Duration: " . $duration . " years<br>";
+          echo "Your monthly installment: " . number_format($monthly_installment, 2) . " per month";
+      } else {
+          echo "Please select loan amount and duration.";
+      }
+  }
 }
 ?>

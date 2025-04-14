@@ -19,9 +19,8 @@
     </head>
 
     <body>
-        
-     <div class="container">
-        <form action="" method="get">
+       <div class="container">
+        <form action="" method = "get">
             <div class="mb-3">
                 <label for="" class="form-label">Name</label>
                 <input type="text" name="uName" id="" class="form-control" placeholder="" aria-describedby="helpId" />
@@ -30,24 +29,19 @@
             <div class="mb-3">
                 <label for="" class="form-label">Email</label>
                 <input type="text" name="uEmail" id="" class="form-control" placeholder="" aria-describedby="helpId" />
-                
-            </div>
-
-            <button name="sub" class="btn btn-info">Submit</button>
-            
+                <!-- <small id="helpId" class="text-muted">Help text</small> -->
+            </div>  
+            <button name ="sub" class="btn btn-info">Submit</button>          
         </form>
-     </div>
-
-
+       </div>
     </body>
 </html>
-
-<?php
+<?php 
 // if(isset($_POST['sub'])){
 //     $userName = $_POST['uName'];
 //     $userEmail = $_POST['uEmail'];
-//     echo "this is user ". $userName ." and his email is ". $userEmail ;
-// }
+//     echo " this is user ". $userName ." and his email is " . $userEmail ;
+// };
 if(isset($_GET['sub'])){
     $userName = $_GET['uName'];
     $userEmail = $_GET['uEmail'];

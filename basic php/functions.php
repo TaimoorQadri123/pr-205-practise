@@ -1,47 +1,41 @@
-<?php
+<?php 
 $num = 10 ;
-
-function output() :string{
-    $number =20 ;
-    global $num ; 
-    return  "global variable"." ". $num." "."local scope variable number"." ".$number."<br>";
+function output(){
+    $number = 20 ;
+    global $num ;
+    return "global variable"." ". $num . " " . "local scope variable" ." ".  $number . "<br>";
 }
 echo output();
 
-
-function add($n1= 20, $n2= 30): mixed{
-    return $n1 + $n2;
+function add($n1=20 , $n2=30){
+    return $n1 + $n2 ;
 }
-echo add();
+echo add ();
 
 // STATIC SCOPE 
-function statiscScope(){
-    static $x = 1;
-    echo $x ;
+function staticscope(){
+    static $x =1;
+    echo $x;
     $x++;
-
-
-}
+} 
 echo "<br>";
-echo statiscScope();
+echo staticscope();
 echo "<br>";
-echo statiscScope();
+echo staticscope();
 echo "<br>";
-echo statiscScope();
+echo staticscope();
 
-$empName = "hassan ";
+$empName = "Hassan";
 $empAge = "21";
-echo "<h1>$empName , $empAge</h1>";
-echo '<h1>$empName , $empAge</h1>';
-echo '<h1>' . $empName . $empAge. '</h1>';
-echo "<h1>" .$empName , $empAge ."</h1>";
-echo "yahan se print statement start hy ";
+echo "<h1>$empName , $empAge </h1>";
+echo '<h1>$empName , $empAge </h1>';
+echo '<h1>' . $empName . $empAge .'</h1>';
+echo  "<h1>" . $empName . $empAge ."</h1>";
+// echo "<br";
+echo "yahan se print start horaha hy ";
 
-print "<h1>$empName , $empAge</h1>";
-print '<h1>$empName </h1>';
-// print '<h1>' . $empName . $empAge. '</h1>';
-// print "<h1>" .$empName , $empAge ."</h1>";
-
-
-
+print "<h1>$empName , $empAge </h1>";
+print '<h1>$empName , $empAge </h1>';
+print '<h1>' . $empName . $empAge .'</h1>';
+print "<h1>" . $empName . $empAge ."</h1>";
 ?>

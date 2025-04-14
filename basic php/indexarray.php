@@ -19,38 +19,39 @@
     </head>
 
     <body>
-
-    <div class="container">
+       <div class="container">
         <?php 
-        $students = ["Ali","Aqsa","Hamza","Sana"];
+        $students = ["Ali","taimoor","Asad"];
         print_r($students);
         ?>
-        
-         <ul>
-            <?php
-            for($i=0 ; $i<count($students) ; $i++ ){
-                ?>
-             <li> <?php echo $students[$i]?> </li>
 
-            <?php
-            }
-            ?>
-        </ul>
-
-        <h1>foreach loop</h1>
         <ul>
-            <?php
-            foreach($students as $key => $std){
-                ?>
-             <li> <?php echo $key." ". $std ?> </li>            
-            <?php
-            }
+            <?php 
+                  for($i=0; $i<count($students); $i++){
+
+                    ?>
+                       
+                     <li> <?php echo $students[$i] ?></li>
+
+                    <?php
+                  }
             ?>
         </ul>
 
+        <h1>For Each loop</h1>
+         
+       <ul>
+         <?php   
+         foreach($students as $key => $std ){
+          ?>
+            <li><?php echo $key." ".$std  ?></li>
+             <?php
+         }
+             ?>
 
-    </div>
-      
+       </ul>
+
+
+       </div>
     </body>
 </html>
-        

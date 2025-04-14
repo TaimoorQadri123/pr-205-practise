@@ -8,7 +8,7 @@ if(!isset($_SESSION['adminEmail'])){
 
 
 <!-- Blank Start -->
-<div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-4 px-4">
                 <div class="row vh-100 bg-light rounded mx-0">
                     <div class="col-md-6 ">
                     <!-- <div class="col-sm-12 col-xl-6"> -->
