@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2025 at 11:07 PM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 7.4.28
+-- Generation Time: Apr 17, 2025 at 09:43 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `apt`
+-- Database: `aptech`
 --
 
 -- --------------------------------------------------------
@@ -32,15 +32,18 @@ CREATE TABLE `categories` (
   `name` varchar(200) NOT NULL,
   `description` varchar(200) NOT NULL,
   `image` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `image`) VALUES
-(1, 'shoes', 'Khaki Comfy Slip On Sneakers 0120567', 'shoes.webp'),
-(2, 'bags', 'Fashion Man Small Chest Bag Phone Pocket Cross Body Shoulder Fanny Pack Male Handbag Outdoor Neck Side Crossbody Gym Bags', 'bagss.jpg');
+(2, 'shoes', 'Embrace chic elegance with these modern loafers.', 'shoes.webp'),
+(3, 'bags', 'expedition backpack - great for outdoor adventures and hiking', 'bags.jpg'),
+(4, 'perfumes', 'Signature\r\n4.7\r\n(31)\r\n·\r\nRs1,890 PKR*\r\n·\r\nIn stock\r\n·\r\nBrand: Signature Perfumes', 'perfume.webp'),
+(5, 'watches', 'DAGAR Men Watch Luxury Business Quartz', 'watch (1).jpg'),
+(7, 'shoees', 'Choosing the Best Men\'s Sneakers Shoes for Optimal Comfort – One', 'shoes (010).jpg');
 
 -- --------------------------------------------------------
 
@@ -56,7 +59,16 @@ CREATE TABLE `products` (
   `qty` int(11) NOT NULL,
   `image` varchar(500) NOT NULL,
   `c_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `price`, `description`, `qty`, `image`, `c_id`) VALUES
+(1, 'shoes', 2700, 'Harrison Blue Casual Shoes 0160374', 5, 'shoes_1.webp', 2),
+(2, 'perfumes', 1400, 'Best Perfumes and Colognes for Men ', 2, 'pefx.webp', 4),
+(4, 'bags', 1000, 'Shop Best COSCOOA Shoulder Bag for Men Leather Man Bag Man P', 5, 'bug(1).jpg', 3);
 
 -- --------------------------------------------------------
 
@@ -67,7 +79,7 @@ CREATE TABLE `products` (
 CREATE TABLE `role` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `role`
@@ -89,7 +101,7 @@ CREATE TABLE `user` (
   `email` varchar(200) NOT NULL,
   `pssword` varchar(200) NOT NULL,
   `role_id` int(11) NOT NULL DEFAULT 2
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `user`
@@ -97,7 +109,10 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `name`, `email`, `pssword`, `role_id`) VALUES
 (2, 'admin', 'admin@gmail.com', '123', 1),
-(3, 'taimor', 'taimoor@gmail.com', 'hvc', 2);
+(3, 'taimoor ', 'taimoor@gmail.com', '123', 2),
+(4, 'taimoor', 'ali@gmail.com', '123', 2),
+(5, 'haider', 'haider@gmail.com', '1234', 2),
+(6, 'afaq', 'afaq', '123', 2);
 
 --
 -- Indexes for dumped tables
@@ -137,13 +152,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `role`
@@ -155,7 +170,7 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

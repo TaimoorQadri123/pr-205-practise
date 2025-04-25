@@ -52,14 +52,29 @@
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							Help & FAQs
 						</a>
+						<?php
+						if(isset($_SESSION['userEmail'])){
+						?>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							My Account
+						<?php echo $_SESSION['userName']; ?>	
 						</a>
+						<?php
+						}
+						else{
+							?>
+							<a href="login.php" class="flex-c-m trans-04 p-lr-25">login</a>
+							<?php
+ 						}
+						 ?>
 
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
+						
+
+<?php if(isset($_SESSION['userEmail'])){?>
+						<a href="logout.php" class="flex-c-m trans-04 p-lr-25">
+							logout
 						</a>
+						<?php }?>
 
 						<a href="#" class="flex-c-m trans-04 p-lr-25">
 							USD
@@ -80,9 +95,9 @@
 					<div class="menu-desktop">
 						<ul class="main-menu">
 							<li class="active-menu">
-								<a href="index.html">Home</a>
+								<a href="index.php">Home</a>
 								<ul class="sub-menu">
-									<li><a href="index.html">Homepage 1</a></li>
+									<li><a href="index.php">Homepage 1</a></li>
 									<li><a href="home-02.html">Homepage 2</a></li>
 									<li><a href="home-03.html">Homepage 3</a></li>
 								</ul>
@@ -93,7 +108,7 @@
 							</li>
 
 							<li class="label1" data-label1="hot">
-								<a href="shoping-cart.html">Features</a>
+								<a href="shoping-cart.php">Features</a>
 							</li>
 
 							<li>
@@ -116,7 +131,14 @@
 							<i class="zmdi zmdi-search"></i>
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="
+					     <?php
+						 $count = 0;
+						 if(isset($_SESSION['cart'])){
+							$count = count($_SESSION['cart']);
+						 }
+						 echo $count;
+						 ?>">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
 
@@ -132,7 +154,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.php"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -191,9 +213,9 @@
 
 			<ul class="main-menu-m">
 				<li>
-					<a href="index.html">Home</a>
+					<a href="index.php">Home</a>
 					<ul class="sub-menu-m">
-						<li><a href="index.html">Homepage 1</a></li>
+						<li><a href="index.php">Homepage 1</a></li>
 						<li><a href="home-02.html">Homepage 2</a></li>
 						<li><a href="home-03.html">Homepage 3</a></li>
 					</ul>
@@ -207,7 +229,7 @@
 				</li>
 
 				<li>
-					<a href="shoping-cart.html" class="label1 rs1" data-label1="hot">Features</a>
+					<a href="shoping-cart.php" class="label1 rs1" data-label1="hot">Features</a>
 				</li>
 
 				<li>
@@ -240,3 +262,82 @@
 			</div>
 		</div>
 	</header>
+
+
+	<!-- Cart -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">
+					Your Cart
+				</span>
+
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
+					<i class="zmdi zmdi-close"></i>
+				</div>
+			</div>
+			<?php
+			
+			?>
+
+
+			<div class="header-cart-content flex-w js-pscroll">
+				<ul class="header-cart-wrapitem w-full">
+
+                      
+				<?php
+				foreach($_SESSION['cart'] as $key => $value){
+				?>
+					<li class="header-cart-item flex-w flex-t m-b-12">
+						<div class="header-cart-item-img">
+							<img src="AdminPanel/images/<?php echo $value['productImage']?>" alt="IMG">
+						</div>
+
+						<div class="header-cart-item-txt p-t-8">
+							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+							<?php echo $value['productName']?>
+							</a>
+
+							<span class="header-cart-item-info">
+							<?php echo $value['productQty'] ?> x $<?php echo $value['productPrice']?>
+
+							</span>
+						</div>
+					</li>
+                   <?php
+				 }  
+				   ?>
+					
+				</ul>
+				
+
+
+
+
+				<div class="w-full">
+					<div class="header-cart-total w-full p-tb-40">
+                <?php
+				$totalAmount = 0;
+				foreach($_SESSION['cart'] as $key => $value){
+					$totalAmount += $value['productPrice']*$value['productQty'];
+				}
+				?>
+				Total :$<?php echo $totalAmount?>
+
+				</div>
+
+					<div class="header-cart-buttons flex-w w-full">
+						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
+							View Cart
+						</a>
+
+						<a href="shoping-cart.php" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
+							Check Out
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

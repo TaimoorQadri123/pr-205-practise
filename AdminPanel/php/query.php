@@ -78,7 +78,7 @@ if(isset($_POST['updateCategory'])){
 
 
 }
-// remove 
+// remove  category
 if(isset($_GET['categoryId'])){
     $categoryId = $_GET['categoryId'];
     $query = $pdo->prepare("delete from categories where id = :cId");
@@ -89,6 +89,8 @@ if(isset($_GET['categoryId'])){
 
 
 }
+
+
 
 
 

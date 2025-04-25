@@ -1,5 +1,5 @@
 <?php 
-$server = "mysql:host=localhost;dbname=apt";
+$server = "mysql:host=localhost;dbname=aptech";
 $user = "root";
 $pass = "";
 $pdo = new PDO ($server,$user,$pass);
